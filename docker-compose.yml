@@ -48,8 +48,8 @@ services:
       - mirakurun
       - db
     ports:
-      - "8888:8888"
-      - "8889:8889"
+      - 8888:8888
+      - 8889:8889
     deploy:
       resources:
         reservations:
