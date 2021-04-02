@@ -6,6 +6,7 @@ epgstation/thumbnail/*
 
 mirakurun/config/*
 mirakurun/data/*
+!mirakurun/config/server.yml
 !mirakurun/config/tuners.yml
 
 !.gitkeep
