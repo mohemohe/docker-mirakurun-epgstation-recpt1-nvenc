@@ -1,0 +1,13 @@
+epgstation/config/*
+epgstation/data/*
+epgstation/logs/*
+epgstation/thumbnail/*
+!epgstation/config/config.sample.yml
+
+mirakurun/config/*
+mirakurun/data/*
+!mirakurun/config/tuners.yml
+
+!.gitkeep
+
+.env
