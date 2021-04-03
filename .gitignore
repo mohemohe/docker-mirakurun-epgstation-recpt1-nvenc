@@ -3,6 +3,7 @@ epgstation/data/*
 epgstation/logs/*
 epgstation/thumbnail/*
 !epgstation/config/config.sample.yml
+!epgstation/config/enc3.js
 
 mirakurun/config/*
 mirakurun/data/*

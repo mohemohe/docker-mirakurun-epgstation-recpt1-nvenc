@@ -44,7 +44,7 @@ encodeProcessNum: 4
 concurrentEncodeNum: 1
 encode:
     - name: H.264
-      cmd: '%NODE% %ROOT%/recorded/enc3.js'
+      cmd: '%NODE% %ROOT%/config/enc3.js'
       suffix: .mp4
       rate: 4.0
 
@@ -154,7 +154,7 @@ stream:
                       -i pipe:0 -sn -threads 0
                       -c:v h264_nvenc -vf bwdif=0:-1:0,scale=-2:720 -b:v 0 -qmin 22 -qmax 28
                       -c:a aac -ar 48000 -b:a 192k -ac 2
-                      -profile:v baseline -preset slow
+                      -profile:v baseline -preset llhq
                       -tune fastdecode,zerolatency
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof -y -f mp4
                       pipe:1'
@@ -165,7 +165,7 @@ stream:
                       -i pipe:0 -sn -threads 0
                       -c:v h264_nvenc -vf bwdif=0:-1:0,scale=-2:480 -b:v 0 -qmin 24 -qmax 30
                       -c:a aac -ar 48000 -b:a 192k -ac 2
-                      -profile:v baseline -preset slow
+                      -profile:v baseline -preset llhq
                       -tune fastdecode,zerolatency
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof -y -f mp4
                       pipe:1'
@@ -213,7 +213,7 @@ stream:
                       -i pipe:0 -sn -threads 0
                       -c:v h264_nvenc -vf bwdif=0:-1:0,scale=-2:720 -b:v 0 -qmin 22 -qmax 28
                       -c:a aac -ar 48000 -b:a 192k -ac 2
-                      -profile:v baseline -preset slow
+                      -profile:v baseline -preset llhq
                       -tune fastdecode,zerolatency
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof -y -f mp4
                       pipe:1'
@@ -224,7 +224,7 @@ stream:
                       -i pipe:0 -sn -threads 0
                       -c:v h264_nvenc -vf bwdif=0:-1:0,scale=-2:480 -b:v 0 -qmin 24 -qmax 30
                       -c:a aac -ar 48000 -b:a 192k -ac 2
-                      -profile:v baseline -preset slow
+                      -profile:v baseline -preset llhq
                       -tune fastdecode,zerolatency
                       -movflags frag_keyframe+empty_moov+faststart+default_base_moof -y -f mp4
                       pipe:1'

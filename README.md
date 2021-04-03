@@ -38,6 +38,7 @@ cp sample.env .env
 - epgstation
     - config
         - config.sample.yml
+        - enc3.js
 - mirakurun
     - config
         - server.yml
