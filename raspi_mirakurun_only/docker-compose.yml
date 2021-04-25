@@ -7,7 +7,9 @@ x-logging: &logging
 version: "3.7"
 services:
   mirakurun:
-    build: ../mirakurun/raspi.Dockerfile
+    build:
+      context: ../mirakurun
+      dockerfile: raspi.Dockerfile
     cap_add:
       - SYS_ADMIN
       - SYS_NICE
