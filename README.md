@@ -66,3 +66,9 @@ cp epgstation/config/config.sample.yml epgstation/config/config.yml
 ```bash
 docker-compose up -d
 ```
+
+## Raspberry Pi
+
+ `raspi_mirakurun_only/docker-compose.yml` を使うと、MirakurunのみRaspberry Piで動かせます  
+ Raspberry Pi 4 8GB + Ubuntu 21.04 arm64で動作確認しています  
+ 設定ファイルの変更は自分でなんとかしてください

@@ -1,0 +1,54 @@
+x-logging: &logging
+  driver: json-file
+  options:
+    max-file: "1"
+    max-size: 10m
+
+version: "3.7"
+services:
+  epgstation:
+    build: ./epgstation
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./epgstation/config:/app/config
+      - ./epgstation/data:/app/data
+      - ./epgstation/thumbnail:/app/thumbnail
+      - ./epgstation/logs:/app/logs
+      - /rec:/rec
+      - /grec:/grec
+    depends_on:
+      - mirakurun
+      - db
+    ports:
+      - 8888:8888
+      - 8889:8889
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities:
+                - gpu
+                - video
+                - compute
+                - utility
+    restart: always
+    logging: *logging
+
+  db:
+    image: mariadb
+    volumes:
+      - mariadb_db:/var/lib/mysql
+    env_file:
+      - .env
+    restart: always
+    logging: *logging
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    restart: always
+    logging: *logging
+volumes:
+  mirakurun_opt:
+  mariadb_db:

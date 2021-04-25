@@ -1,0 +1,38 @@
+x-logging: &logging
+  driver: json-file
+  options:
+    max-file: "1"
+    max-size: 10m
+
+version: "3.7"
+services:
+  mirakurun:
+    build: ../mirakurun/raspi.Dockerfile
+    cap_add:
+      - SYS_ADMIN
+      - SYS_NICE
+    env_file:
+      - ../.env
+    ports:
+      - 40772:40772
+      - 9229:9229
+    devices:
+      - /dev/bus:/dev/bus
+      - /dev/px4video0:/dev/px4video0
+      - /dev/px4video1:/dev/px4video1
+      - /dev/px4video2:/dev/px4video2
+      - /dev/px4video3:/dev/px4video3
+      - /dev/px4video4:/dev/px4video4
+      - /dev/px4video5:/dev/px4video5
+      - /dev/px4video6:/dev/px4video6
+      - /dev/px4video7:/dev/px4video7
+    volumes:
+      - ../mirakurun/config:/app-config/
+      - ../mirakurun/data/:/app-data/
+      - /var/run/:/var/run/
+      - mirakurun_opt:/opt/
+    restart: always
+    logging: *logging
+volumes:
+  mirakurun_opt:
+  mariadb_db:
