@@ -17,7 +17,6 @@ services:
       - /rec:/rec
       - /grec:/grec
     depends_on:
-      - mirakurun
       - db
     ports:
       - 8888:8888
