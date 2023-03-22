@@ -6,7 +6,7 @@ docker-mirakurun-epgstation-recpt1-nvenc
 ### ⚠️ 𝑫𝑰𝑺𝑪𝑶𝑵𝑻𝑰𝑵𝑼𝑬𝑫 ⚠️ 
 
 NVENCを使うのをやめたので、このリポジトリのメンテナンスは終了しました  
-QSV(VA-API)版は [mohemohe/docker-mirakurun-epgstation-recpt1-libva-qsv](https://github.com/mohemohe/docker-mirakurun-epgstation-recpt1-libva-qsv) から入手できます
+QSV(VA-API)版は [docker-mirakurun-epgstation-recpt1-vaapi-qsv](https://github.com/mohemohe/docker-mirakurun-epgstation-recpt1-vaapi-qsv) から入手できます
 
 ----
 
